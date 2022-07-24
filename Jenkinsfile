@@ -49,7 +49,7 @@ pipeline {
 				
 			
 				
-                sh "docker run -d -p 8013:8080 --name myapp arahman009/samplewebapp"
+                sh "docker run -d -p 8009:8080 --name myapp226 arahman009/samplewebapp"
  
             }
         }
