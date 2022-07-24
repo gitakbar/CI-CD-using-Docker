@@ -46,10 +46,10 @@ pipeline {
              
             steps 
 			{
-				sh "docker stop $(docker ps -aq)"
-				sh "docker container rm $(docker container ls -aq)"
-				sh "docker rmi $(docker images -q)"
-                sh "docker run -d -p 8003:8080 arahman009/samplewebapp"
+				
+				
+				
+                sh "docker run -d -p 8003:8080 --name myapp arahman009/samplewebapp"
  
             }
         }
