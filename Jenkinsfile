@@ -49,14 +49,17 @@ pipeline {
 				
 			
 				
-                sh "docker run -d -p 8009:8080 --name myapp226 arahman009/samplewebapp"
+                sh "docker run -d -p 8019:8080  arahman009/samplewebapp"
  
             }
         }
  stage('Run Docker container on remote hosts') {
              
             steps {
-                sh "docker -H ssh://doc@172.31.45.219 run -d -p 8003:8080 arahman009/samplewebapp"
+		     sh 'ssh doc@172.31.45.219'
+                //dockerrun= 'docker -H ssh://doc@172.31.45.219 run -d -p 8003:8080 arahman009/samplewebapp'
+		  sh "docker run -d -p 8003:8080 arahman009/samplewebapp"
+		    
  
             }
         }
